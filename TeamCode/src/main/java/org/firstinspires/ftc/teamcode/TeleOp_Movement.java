@@ -58,7 +58,7 @@ public class TeleOp_Movement extends LinearOpMode {
     // Each motion axis is controlled by one Joystick axis.
     // 1) Axial:    Dariving forward and backward                Left-joystick Forward/Backward
     // 2) Lateral:  Strafing right and left                     Left-joystick Right and Left
-    // 3) Yaw:      Rotating Clockwise and counter clockwise    Right-joystick Right and Left
+    // 3) Yaw:      Rotating Clockwise and counterclockwise    Right-joystick Right and Left
     // This code is written assuming that the right-side motors need to be reversed for the robot to drive forward.
     // When you first test your robot, if it moves backward when you push the left stick forward, then you must flip
     // the direction of all 4 motors (see code below).
@@ -92,7 +92,7 @@ public class TeleOp_Movement extends LinearOpMode {
       lateral = gamepad1.left_stick_x;
       yaw = gamepad1.right_stick_x;
       /*
-      //I don't know what this does!!!
+      // I don't know what this does!!!
       if (yaw > 0.8) {
         yaw = (float) (yaw - 0.3);
       }
@@ -158,13 +158,17 @@ public class TeleOp_Movement extends LinearOpMode {
         leftServo.setPosition(0.5);
       }
 
-      // 
-      if (gamepad2.a) {
-          testPID.targetPos = 2000;
+      // Super Power
+      if (gamepad2.right_bumper) {
+          testPID.targetPos = -2640;
+          testPID.updateLaunchMotor(LM, pid);
+      }
+      else if (gamepad2.a) {
+          testPID.targetPos = -1500;
           testPID.updateLaunchMotor(LM, pid);
       }
       else if (gamepad2.b) {
-          testPID.targetPos = -2000;
+          testPID.targetPos = 1000;
           testPID.updateLaunchMotor(LM, pid);
       }
       else {

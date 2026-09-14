@@ -18,12 +18,12 @@ public class testPID extends OpMode {
 
     PIDFController pid;
 
-    public static double kP = 0.01, kI = 0.01, kD = 0.0, kF = 0.0;
+    public static double kP = 0.025, kI = 0.15, kD = 0.0, kF = 0.0;
 
     public static double targetPos = 0;
 
     static double currentPos = 0;
-    static double power = 0.0;
+     static double power = 0.0;
 
     public static void updateLaunchMotor(DcMotorEx launchMotor, PIDFController pid) {
         currentPos = launchMotor.getVelocity();

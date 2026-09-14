@@ -34,7 +34,7 @@ public class Constants {
             .rightFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
             .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD) // Remove once forward & lateral velocity are added
             .xVelocity(71.00797301765502)    // ADD: Forward velocity from tuner
-            .yVelocity(47.84892308993602);   // ADD: Lateral velocity from tuner
+            .yVelocity(48.125476266455465);   // ADD: Lateral velocity from tuner
 
     public static PinpointConstants localizerConstants = new PinpointConstants()
             .forwardPodY(-8.125) // NOT ACTUAL MEASUREMENT, MEASURE IT IN INCHES
